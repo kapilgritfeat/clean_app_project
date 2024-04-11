@@ -5,8 +5,9 @@ import '../model/flower.dart';
 
 class FlowerWidget extends StatelessWidget {
   final Flower _flower;
+  final Function onTap;
 
-  const FlowerWidget(this._flower, {super.key});
+  const FlowerWidget(this._flower, this.onTap, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class FlowerWidget extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.blue, borderRadius: BorderRadius.circular(20)),
           child: GestureDetector(
-            onTap: () {},
+            onTap: (){
+              onTap();
+            },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
