@@ -12,6 +12,11 @@ Make sure it passes lint rules
 ``` 
 flutter analyze 
 ```
+#### Libraries Used
+```
+dio: ^5.4.2+1  // Network client
+mockito: ^5.4.4 // Mock library for testing
+```
 
 ### Project Structure
 
