@@ -19,6 +19,5 @@ class SnapShotBaseWidget extends StatelessWidget {
         child: Text('Error'),
       );
     }
-    return const Placeholder();
   }
 }

@@ -1,5 +1,4 @@
 import 'package:clean_bloc_sample/global/component.dart';
-import 'package:clean_bloc_sample/routes/app_routes.dart';
 import 'package:clean_bloc_sample/routes/routes.dart';
 import 'package:clean_bloc_sample/screen/flowerlist/controller/flower_controller.dart';
 import 'package:clean_bloc_sample/screen/flowerlist/repository/flower_repositoryimpl.dart';
@@ -30,8 +29,9 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         color: Colors.blue,
         child: const Center(
-            child: Text('Splash Screen',
-                style: TextStyle(color: Colors.white, fontSize: 20))),
+            child: CircularProgressIndicator(
+          color: Colors.white,
+        )),
       ),
     );
   }

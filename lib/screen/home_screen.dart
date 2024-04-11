@@ -1,4 +1,3 @@
-import 'package:clean_bloc_sample/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import '../routes/routes.dart';
@@ -14,15 +13,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
-      body: Column(
-        children: [
-          ElevatedButton(
+      backgroundColor: Colors.blue,
+      body: Center(
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          child: ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, Routes.flowerLists);
               },
-              child: const Text('Flowers'))
-        ],
+              child: const Text('Flowers')),
+        ),
       ),
     );
   }

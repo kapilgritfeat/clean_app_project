@@ -1,14 +1,10 @@
 import 'package:clean_bloc_sample/global/component.dart';
-import 'package:clean_bloc_sample/routes/app_routes.dart';
 import 'package:clean_bloc_sample/routes/routes.dart';
-import 'package:clean_bloc_sample/screen/flowerlist/controller/flower_controller.dart';
 import 'package:clean_bloc_sample/screen/flowerlist/widget/flower_widget.dart';
 import 'package:clean_bloc_sample/utils/snapshot_base_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../model/flower.dart';
-import '../repository/flower_repository.dart';
-import '../repository/flower_repositoryimpl.dart';
 
 class FlowerListScreen extends StatefulWidget {
   const FlowerListScreen({super.key});
@@ -40,11 +36,10 @@ class _FlowerListScreenState extends State<FlowerListScreen> {
 
   buildFlowerList(List<Flower> flowerList) {
     return ListView.builder(
-      itemBuilder: (ctx, int) {
-        final flower = flowerList[int];
+      itemBuilder: (ctx, index) {
+        final flower = flowerList[index];
         return FlowerWidget(flower, () {
-          Navigator.pushNamed(context, Routes.flowerDetail,
-              arguments: flower);
+          Navigator.pushNamed(context, Routes.flowerDetail, arguments: flower);
         });
       },
       itemCount: flowerList.length,
