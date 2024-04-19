@@ -15,12 +15,6 @@ class FlowerListScreen extends StatefulWidget {
 
 class _FlowerListScreenState extends State<FlowerListScreen> {
   var flowerController = Component.instance.flowerController;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
