@@ -6,7 +6,6 @@ import 'package:app_bloc/screens/view/flower_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// A Calculator.
 class BlocAppScreen extends StatelessWidget {
   const BlocAppScreen({super.key});
 

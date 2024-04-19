@@ -35,6 +35,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: const Text('with Bloc')),
             ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.riverpodApp);
+                  },
+                  child: const Text('with Riverpod')),
+            ),
           ],
         ),
       ),
