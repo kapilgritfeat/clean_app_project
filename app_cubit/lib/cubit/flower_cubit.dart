@@ -1,7 +1,9 @@
-import 'package:app_bloc/screens/model/Flower.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:app_bloc/screens/repository/flower_repository.dart';
+
+import '../screens/model/Flower.dart';
+import '../screens/repository/flower_repository.dart';
 
 part 'flower_state.dart';
 

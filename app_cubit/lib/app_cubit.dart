@@ -1,7 +1,8 @@
 library app_cubit;
 
-import 'package:app_bloc/screens/repository/flower_repositoryimpl.dart';
-import 'package:app_bloc/screens/view/flower_list_screen.dart';
+
+import 'package:app_cubit/screens/repository/flower_repositoryimpl.dart';
+import 'package:app_cubit/screens/view/flower_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,6 +17,5 @@ class CubitAppScreen extends StatelessWidget {
       create: (_) => FlowerCubit( FlowerRepositoryImpl()),
       child: const FlowerListScreen(),
     );
-    return const FlowerListScreen();
   }
 }
