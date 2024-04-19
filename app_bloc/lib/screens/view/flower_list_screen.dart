@@ -2,7 +2,7 @@ import 'package:app_bloc/screens/bloc/flower_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../model/Flower.dart';
+import '../model/flower.dart';
 import '../widget/flower_widget.dart';
 
 class FlowerListScreen extends StatefulWidget {

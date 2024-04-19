@@ -45,6 +45,10 @@ dependencies:
     path: app_riverpod/
   app_provider:
     path: app_provider/
+  app_cubit:
+    path: app_cubit/
+  app_bloc_freezed:
+    path: app_bloc_freezed/
 
 dev_dependencies:
   flutter_test:

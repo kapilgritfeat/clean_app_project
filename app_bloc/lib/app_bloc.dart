@@ -15,6 +15,5 @@ class BlocAppScreen extends StatelessWidget {
       create: (_) => FlowerBloc(FlowerRepositoryImpl())..add(GetFlower()),
       child: const FlowerListScreen(),
     );
-    return const FlowerListScreen();
   }
 }

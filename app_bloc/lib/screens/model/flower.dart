@@ -8,7 +8,7 @@ class Flower extends Equatable {
   final String? photo;
   final double? price;
 
-  Flower(
+  const Flower(
       {this.productId,
       this.category,
       this.name,

@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../model/Flower.dart';
+import '../model/flower.dart';
 import '../repository/flower_repository.dart';
 
 part 'flower_event.dart';
