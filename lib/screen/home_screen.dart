@@ -14,15 +14,37 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
-      body: Center(
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(20),
-          child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.flowerLists);
-              },
-              child: const Text('Flowers')),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.flowerLists);
+                  },
+                  child: const Text('Flowers')),
+            ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.blocApp);
+                  },
+                  child: const Text('with Bloc')),
+            ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.riverpodApp);
+                  },
+                  child: const Text('with Riverpod')),
+            ),
+          ],
         ),
       ),
     );
