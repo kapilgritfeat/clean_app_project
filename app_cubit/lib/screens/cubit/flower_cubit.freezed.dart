@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$FlowerState {
-  ApiRequestStates? get status => throw _privateConstructorUsedError;
-  List<Flower> get flowerList => throw _privateConstructorUsedError;
+  ApiRequestState<dynamic> get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FlowerStateCopyWith<FlowerState> get copyWith =>
@@ -30,7 +29,9 @@ abstract class $FlowerStateCopyWith<$Res> {
           FlowerState value, $Res Function(FlowerState) then) =
       _$FlowerStateCopyWithImpl<$Res, FlowerState>;
   @useResult
-  $Res call({ApiRequestStates? status, List<Flower> flowerList});
+  $Res call({ApiRequestState<dynamic> status});
+
+  $ApiRequestStateCopyWith<dynamic, $Res> get status;
 }
 
 /// @nodoc
@@ -46,19 +47,22 @@ class _$FlowerStateCopyWithImpl<$Res, $Val extends FlowerState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
-    Object? flowerList = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
-      status: freezed == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ApiRequestStates?,
-      flowerList: null == flowerList
-          ? _value.flowerList
-          : flowerList // ignore: cast_nullable_to_non_nullable
-              as List<Flower>,
+              as ApiRequestState<dynamic>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ApiRequestStateCopyWith<dynamic, $Res> get status {
+    return $ApiRequestStateCopyWith<dynamic, $Res>(_value.status, (value) {
+      return _then(_value.copyWith(status: value) as $Val);
+    });
   }
 }
 
@@ -70,7 +74,10 @@ abstract class _$$FlowerStateImplCopyWith<$Res>
       __$$FlowerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiRequestStates? status, List<Flower> flowerList});
+  $Res call({ApiRequestState<dynamic> status});
+
+  @override
+  $ApiRequestStateCopyWith<dynamic, $Res> get status;
 }
 
 /// @nodoc
@@ -84,18 +91,13 @@ class __$$FlowerStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
-    Object? flowerList = null,
+    Object? status = null,
   }) {
     return _then(_$FlowerStateImpl(
-      status: freezed == status
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as ApiRequestStates?,
-      flowerList: null == flowerList
-          ? _value._flowerList
-          : flowerList // ignore: cast_nullable_to_non_nullable
-              as List<Flower>,
+              as ApiRequestState<dynamic>,
     ));
   }
 }
@@ -103,27 +105,16 @@ class __$$FlowerStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FlowerStateImpl extends _FlowerState {
-  const _$FlowerStateImpl(
-      {this.status = ApiRequestStates.initial,
-      final List<Flower> flowerList = const []})
-      : _flowerList = flowerList,
-        super._();
+  const _$FlowerStateImpl({this.status = const ApiRequestState.loading()})
+      : super._();
 
   @override
   @JsonKey()
-  final ApiRequestStates? status;
-  final List<Flower> _flowerList;
-  @override
-  @JsonKey()
-  List<Flower> get flowerList {
-    if (_flowerList is EqualUnmodifiableListView) return _flowerList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_flowerList);
-  }
+  final ApiRequestState<dynamic> status;
 
   @override
   String toString() {
-    return 'FlowerState(status: $status, flowerList: $flowerList)';
+    return 'FlowerState(status: $status)';
   }
 
   @override
@@ -131,14 +122,11 @@ class _$FlowerStateImpl extends _FlowerState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FlowerStateImpl &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._flowerList, _flowerList));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, status, const DeepCollectionEquality().hash(_flowerList));
+  int get hashCode => Object.hash(runtimeType, status);
 
   @JsonKey(ignore: true)
   @override
@@ -148,15 +136,12 @@ class _$FlowerStateImpl extends _FlowerState {
 }
 
 abstract class _FlowerState extends FlowerState {
-  const factory _FlowerState(
-      {final ApiRequestStates? status,
-      final List<Flower> flowerList}) = _$FlowerStateImpl;
+  const factory _FlowerState({final ApiRequestState<dynamic> status}) =
+      _$FlowerStateImpl;
   const _FlowerState._() : super._();
 
   @override
-  ApiRequestStates? get status;
-  @override
-  List<Flower> get flowerList;
+  ApiRequestState<dynamic> get status;
   @override
   @JsonKey(ignore: true)
   _$$FlowerStateImplCopyWith<_$FlowerStateImpl> get copyWith =>
