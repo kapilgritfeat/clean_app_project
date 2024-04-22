@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../global/api_request_state.dart';
+import '../../utils/api_handle_base_widget.dart';
 import '../model/Flower.dart';
 import '../widget/flower_widget.dart';
 
@@ -29,29 +30,10 @@ class _FlowerListScreenState extends State<FlowerListScreen> {
   //In Dart 3 we don't need the break anymore
   // All the possible cases must be handled else you'll receive an error
   buildBodyWidget(ApiRequestState state) {
-    return switch (state) {
-      LoadingState() ||
-      InitialState() =>
-        const Center(child: CircularProgressIndicator()),
-    //we can directly destruct the value from the error state directly and use it in our widgets
-      ErrorState error => Text(error.message),
-    //Guard clause: "when"
-      LoadedState(data: final List<Flower> flowerList)
-          when flowerList.isNotEmpty =>
-        ListView.builder(
-          itemBuilder: (ctx, index) {
-            final flower = flowerList[index];
-            return FlowerWidget(flower, () {});
-          },
-          itemCount: flowerList.length,
-        ),
-      LoadedState(data: final List<Flower> flowerList)
-          when flowerList.isEmpty =>
-        const Center(
-          child: Text('No data found.'),
-        ),
-      LoadedState() => const SizedBox.shrink(),
-      };
+    return ApiHandleBaseWidget<Flower>(
+      state,
+      (flowerList) => buildFlowerList(flowerList),
+    );
   }
 
   buildFlowerList(List<Flower> flowerList) {
