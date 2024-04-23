@@ -12,17 +12,17 @@ class FlowerCubit extends Cubit<FlowerState> {
   final FlowerRepository repository;
 
   FlowerCubit(this.repository) : super(const FlowerState()) {
-    _fetchFlowerList();
+    fetchFlowerList();
   }
 
-  Future<void> _fetchFlowerList() async {
+  Future<void> fetchFlowerList() async {
     emit(state.copyWith(status: const ApiRequestState.loading()));
     try {
       final flowers = await repository.getFlowers();
       emit(state.copyWith(
           status: ApiRequestState.loaded(flowers)));
     } catch (e) {
-      emit(state.copyWith(status: ApiRequestState.error(e.toString())));
+      emit(state.copyWith(status: ApiRequestState.error('Error')));
     }
   }
 }

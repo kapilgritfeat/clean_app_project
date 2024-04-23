@@ -15,6 +15,8 @@ dependencies:
   flutter_bloc: ^8.1.5
   dio: ^5.4.3+1
   equatable: ^2.0.5
+  mockito: ^5.4.4
+
 
 
 dev_dependencies:
@@ -22,6 +24,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^3.0.0
   build_runner: ^2.4.9
+  bloc_test: ^9.1.7
 
 
 
