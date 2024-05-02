@@ -1,7 +1,7 @@
 import 'package:app_cubit/global/api_request_state.dart';
-import 'package:app_cubit/screens/cubit/flower_cubit.dart';
 import 'package:app_cubit/screens/model/Flower.dart';
 import 'package:app_cubit/screens/repository/flower_repository.dart';
+import 'package:app_cubit/screens/view/cubit/flower_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';
 
 import 'package:flutter_test/flutter_test.dart';

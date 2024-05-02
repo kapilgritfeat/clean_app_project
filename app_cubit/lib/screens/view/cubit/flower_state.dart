@@ -7,5 +7,6 @@ sealed class FlowerState with _$FlowerState {
 
   const factory FlowerState(
       {@Default(ApiRequestState.loading()) ApiRequestState status,
+        @Default(ApiRequestState.loading()) ApiRequestState countryState,
     }) = _FlowerState;
 }

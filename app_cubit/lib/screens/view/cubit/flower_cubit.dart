@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../global/api_request_state.dart';
-import '../repository/flower_repository.dart';
+import '../../../global/api_request_state.dart';
+import '../../repository/flower_repository.dart';
 
 part 'flower_state.dart';
 
@@ -22,7 +22,7 @@ class FlowerCubit extends Cubit<FlowerState> {
       emit(state.copyWith(
           status: ApiRequestState.loaded(flowers)));
     } catch (e) {
-      emit(state.copyWith(status: ApiRequestState.error('Error')));
+      emit(state.copyWith(status: const ApiRequestState.error('Error')));
     }
   }
 }

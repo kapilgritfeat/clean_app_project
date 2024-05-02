@@ -17,6 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$FlowerState {
   ApiRequestState<dynamic> get status => throw _privateConstructorUsedError;
+  ApiRequestState<dynamic> get countryState =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FlowerStateCopyWith<FlowerState> get copyWith =>
@@ -29,9 +31,11 @@ abstract class $FlowerStateCopyWith<$Res> {
           FlowerState value, $Res Function(FlowerState) then) =
       _$FlowerStateCopyWithImpl<$Res, FlowerState>;
   @useResult
-  $Res call({ApiRequestState<dynamic> status});
+  $Res call(
+      {ApiRequestState<dynamic> status, ApiRequestState<dynamic> countryState});
 
   $ApiRequestStateCopyWith<dynamic, $Res> get status;
+  $ApiRequestStateCopyWith<dynamic, $Res> get countryState;
 }
 
 /// @nodoc
@@ -48,11 +52,16 @@ class _$FlowerStateCopyWithImpl<$Res, $Val extends FlowerState>
   @override
   $Res call({
     Object? status = null,
+    Object? countryState = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
+              as ApiRequestState<dynamic>,
+      countryState: null == countryState
+          ? _value.countryState
+          : countryState // ignore: cast_nullable_to_non_nullable
               as ApiRequestState<dynamic>,
     ) as $Val);
   }
@@ -62,6 +71,15 @@ class _$FlowerStateCopyWithImpl<$Res, $Val extends FlowerState>
   $ApiRequestStateCopyWith<dynamic, $Res> get status {
     return $ApiRequestStateCopyWith<dynamic, $Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ApiRequestStateCopyWith<dynamic, $Res> get countryState {
+    return $ApiRequestStateCopyWith<dynamic, $Res>(_value.countryState,
+        (value) {
+      return _then(_value.copyWith(countryState: value) as $Val);
     });
   }
 }
@@ -74,10 +92,13 @@ abstract class _$$FlowerStateImplCopyWith<$Res>
       __$$FlowerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ApiRequestState<dynamic> status});
+  $Res call(
+      {ApiRequestState<dynamic> status, ApiRequestState<dynamic> countryState});
 
   @override
   $ApiRequestStateCopyWith<dynamic, $Res> get status;
+  @override
+  $ApiRequestStateCopyWith<dynamic, $Res> get countryState;
 }
 
 /// @nodoc
@@ -92,11 +113,16 @@ class __$$FlowerStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? countryState = null,
   }) {
     return _then(_$FlowerStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
+              as ApiRequestState<dynamic>,
+      countryState: null == countryState
+          ? _value.countryState
+          : countryState // ignore: cast_nullable_to_non_nullable
               as ApiRequestState<dynamic>,
     ));
   }
@@ -105,16 +131,21 @@ class __$$FlowerStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FlowerStateImpl extends _FlowerState {
-  const _$FlowerStateImpl({this.status = const ApiRequestState.loading()})
+  const _$FlowerStateImpl(
+      {this.status = const ApiRequestState.loading(),
+      this.countryState = const ApiRequestState.loading()})
       : super._();
 
   @override
   @JsonKey()
   final ApiRequestState<dynamic> status;
+  @override
+  @JsonKey()
+  final ApiRequestState<dynamic> countryState;
 
   @override
   String toString() {
-    return 'FlowerState(status: $status)';
+    return 'FlowerState(status: $status, countryState: $countryState)';
   }
 
   @override
@@ -122,11 +153,13 @@ class _$FlowerStateImpl extends _FlowerState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FlowerStateImpl &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.countryState, countryState) ||
+                other.countryState == countryState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(runtimeType, status, countryState);
 
   @JsonKey(ignore: true)
   @override
@@ -136,12 +169,15 @@ class _$FlowerStateImpl extends _FlowerState {
 }
 
 abstract class _FlowerState extends FlowerState {
-  const factory _FlowerState({final ApiRequestState<dynamic> status}) =
-      _$FlowerStateImpl;
+  const factory _FlowerState(
+      {final ApiRequestState<dynamic> status,
+      final ApiRequestState<dynamic> countryState}) = _$FlowerStateImpl;
   const _FlowerState._() : super._();
 
   @override
   ApiRequestState<dynamic> get status;
+  @override
+  ApiRequestState<dynamic> get countryState;
   @override
   @JsonKey(ignore: true)
   _$$FlowerStateImplCopyWith<_$FlowerStateImpl> get copyWith =>
