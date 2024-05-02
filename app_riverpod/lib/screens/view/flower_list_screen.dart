@@ -1,3 +1,4 @@
+import 'package:app_riverpod/routes/routes.dart';
 import 'package:app_riverpod/screens/controller/flower_controller.dart';
 import 'package:app_riverpod/screens/model/flower.dart';
 import 'package:app_riverpod/screens/repository/flower_repository.dart';
@@ -38,9 +39,7 @@ class FlowerListScreen extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (ctx, index) {
         final flower = flowerList[index];
-        return FlowerWidget(flower, () {
-          // Navigator.pushNamed(context, Routes.flowerDetail, arguments: flower);
-        });
+        return FlowerWidget(flower);
       },
       itemCount: flowerList.length,
     );
