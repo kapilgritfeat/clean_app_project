@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../network/api_paths.dart';
-import '../model/Flower.dart';
+import '../model/flower.dart';
 
 class FlowerWidget extends StatelessWidget {
   final Flower _flower;

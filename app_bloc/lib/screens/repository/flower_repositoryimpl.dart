@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 import '../../../network/dio_client.dart';
 import '../../network/api_paths.dart';
-import '../model/Flower.dart';
+import '../model/flower.dart';
 import 'flower_repository.dart';
 
 class FlowerRepositoryImpl extends FlowerRepository {
