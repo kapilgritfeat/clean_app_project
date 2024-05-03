@@ -52,6 +52,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, Routes.cubitApp);
                   },
                   child: const Text('with Cubit')),
+            ), Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.getXApp);
+                  },
+                  child: const Text('with GetX')),
             ),
           ],
         ),

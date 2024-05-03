@@ -7,5 +7,6 @@ class Routes {
   static const String blocApp = 'blocApp';
   static const String riverpodApp = 'riverpodApp';
   static const String cubitApp = 'cubitApp';
+  static const String getXApp = 'getXApp';
 
 }
