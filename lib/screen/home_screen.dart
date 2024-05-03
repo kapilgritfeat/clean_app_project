@@ -44,6 +44,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: const Text('with Riverpod')),
             ),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.cubitApp);
+                  },
+                  child: const Text('with Cubit')),
+            ),
           ],
         ),
       ),
