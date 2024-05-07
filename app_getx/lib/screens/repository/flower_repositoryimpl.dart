@@ -7,15 +7,19 @@ import 'flower_repository.dart';
 
 class FlowerRepositoryImpl extends FlowerRepository {
   @override
-  Future<({bool value,String message,List<Flower> flower,})> getFlowers() async {
+  Future<
+      ({
+        bool value,
+        String message,
+        List<Flower> flowers,
+      })> getFlowers() async {
     List<Flower> flowers = [];
     try {
       final response = await DioClient.instance.get(ApiPaths.flowers);
-       flowers = FlowerList.fromJson(response).flowers;
-      return (value:true,message:'Success',flower:flowers);
+      flowers = FlowerList.fromJson(response).flowers;
+      return (value: true, message: 'Success', flowers: flowers);
     } on DioException catch (error) {
-      return (value:false,message:error.message!,flower:flowers);
-
+      return (value: false, message: error.message!, flowers: flowers);
     }
   }
 }
