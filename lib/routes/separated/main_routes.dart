@@ -1,5 +1,6 @@
 import 'package:app_bloc/app_bloc.dart';
 import 'package:app_cubit/app_cubit.dart';
+import 'package:app_getx/app_getx.dart';
 import 'package:app_riverpod/app_riverpod.dart';
 import 'package:clean_bloc_sample/routes/route_type.dart';
 import 'package:clean_bloc_sample/routes/routes.dart';
@@ -13,4 +14,5 @@ Map<String, RouteType> mainRoutes = {
   Routes.blocApp: (context, settings) => const BlocAppScreen(),
   Routes.riverpodApp: (context, settings) => const RiverpodAppScreen(),
   Routes.cubitApp: (context, settings) => const CubitAppScreen(),
+  Routes.getXApp: (context, settings) =>  GetXAppScreen(),
 };
